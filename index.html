@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northern Solutions L.L.C.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+    body { font-family: 'Inter', sans-serif; background: #f5f5f5; color: #111; line-height: 1.6; overflow-x: hidden; }
+
+    nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e0e0e0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 700; letter-spacing: -0.5px; }
+    .nav-links { list-style: none; display: flex; gap: 2rem; }
+    .nav-links li { position: relative; }
+    .nav-links a { text-decoration: none; color: #111; font-weight: 500; }
+    .nav-links a.active { color: #ff6a00; }
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+    .menu-toggle span { width: 25px; height: 3px; background: #111; border-radius: 2px; }
+
+    @media (max-width: 768px) {
+      .nav-links { position: absolute; top: 100%; right: 0; background: #fff; flex-direction: column; width: 200px; transform: translateX(100%); transition: transform 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+      .nav-links.active { transform: translateX(0); }
+      .menu-toggle { display: flex; }
+    }
+
+    header { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(180deg, #ffffff, #eaeaea); padding-top: 80px; overflow: hidden; }
+    header h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; letter-spacing: -2px; z-index: 1; position: relative; }
+    header span { color: #777; font-weight: 300; }
+    header p { margin-top: 1.5rem; font-size: 1.2rem; max-width: 600px; color: #555; z-index: 1; position: relative; }
+
+    #particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+
+    section { padding: 6rem 2rem; max-width: 1200px; margin: auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
+    .box { background: #ffffff; border-radius: 16px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .box:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
+    .box h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .box p { color: #444; font-size: 0.95rem; }
+
+    .divider { width: 80px; height: 2px; background: #111; margin: 4rem auto; }
+    .cta { text-align: center; }
+    .cta a { display: inline-block; margin-top: 2rem; padding: 1rem 2.8rem; border-radius: 40px; border: 2px solid #111; text-decoration: none; color: #111; font-weight: 600; transition: all 0.3s ease; }
+    .cta a:hover { background: #111; color: #fff; }
+
+    footer { padding: 3rem 1rem; text-align: center; font-size: 0.85rem; color: #777; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Northern Solutions L.L.C.</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <canvas id="particles-canvas"></canvas>
+    <h1>Northern <span>Solutions</span></h1>
+    <p>Scientific Research • Technology • Design<br>Clean ideas. Minimal aesthetics. Serious focus.</p>
+  </header>
+
+  <section>
+    <div class="grid">
+      <div class="box" id="about">
+        <h2>About</h2>
+        <p>Northern Solutions LLC delivers high-accuracy simulations of molecular and solid-state systems, leveraging advanced ML, QM, and molecular dynamics techniques. Northern Solutions LLC delivers high-accuracy simulations for aerospace systems, leveraging advanced computational methods, multiphysics modeling, and machine learning techniques. Our work enables predictive insights into material properties, structural behavior, and performance under extreme conditions, supporting innovation in aircraft propulsion, next-generation materials, and computational innovation.</p>
+      </div>
+
+      <div class="box" id="projects">
+        <h2>Projects</h2>
+        <p>We apply machine learning to simulate complex chemical and physical systems with near-quantum accuracy. Projects include predicting observables, improving models, mapping reaction pathways, and enabling new material and molecular discovery. Applications span clean energy, materials, computing, and drug design.</p>
+      </div>
+
+      <div class="box" id="philosophy">
+        <h2>Philosophy</h2>
+        <p>Less noise. More substance. Design should feel calm, intentional, and timeless.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="cta" id="contact"><a href="#">Get in Touch</a></div>
+  </section>
+
+  <footer>© 2016 Northern Solutions L.L.C. · Minimal by design · Hosted on GitHub Pages</footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+
+    const sections = document.querySelectorAll('section, header');
+    const navItems = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => { const sectionTop = section.offsetTop - 100; if (pageYOffset >= sectionTop) { current = section.getAttribute('id'); } });
+      navItems.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === '#' + current) { link.classList.add('active'); } });
+    });
+
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle { constructor() { this.x = Math.random()*canvas.width; this.y = Math.random()*canvas.height; this.radius = Math.random()*6+1; this.dx=(Math.random()-0.5)*1.2; this.dy=(Math.random()-0.5)*1.2;} draw(){ ctx.beginPath(); ctx.arc(this.x,this.y,this.radius,0,Math.PI*2); ctx.fillStyle='#aaa'; ctx.fill(); } update(){ this.x+=this.dx; this.y+=this.dy; if(this.x<0||this.x>canvas.width) this.dx*=-1; if(this.y<0||this.y>canvas.height) this.dy*=-1; this.draw(); } }
+    function initParticles(num=80){ particles=[]; for(let i=0;i<num;i++){ particles.push(new Particle()); } }
+    initParticles();
+    function animate(){ requestAnimationFrame(animate); ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p=>p.update()); }
+    animate();
+  </script>
+
+</body>
+</html>
