@@ -3,63 +3,338 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Northern Solutions L.L.C.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <title>Northern Solutions L.L.C. | Scientific Computing, HPC, Molecular Dynamics & AI</title>
+
+  <meta
+    name="description"
+    content="Northern Solutions L.L.C. provides scientific computing, molecular dynamics, density functional theory, high-performance computing, scientific software development, and AI and machine learning solutions for materials science and molecular simulation."
+  />
+
+  <meta
+    name="keywords"
+    content="scientific computing, molecular dynamics, MD simulations, density functional theory, DFT, high-performance computing, HPC, AI, machine learning, computational materials science, atomistic simulation, LAMMPS, VASP, CP2K, GROMACS, DeePMD, scientific software"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-
-    body { font-family: 'Inter', sans-serif; background: #f5f5f5; color: #111; line-height: 1.6; overflow-x: hidden; }
-
-    nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e0e0e0; z-index: 1000; }
-    .nav-container { max-width: 1200px; margin: auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 700; letter-spacing: -0.5px; }
-    .nav-links { list-style: none; display: flex; gap: 2rem; }
-    .nav-links li { position: relative; }
-    .nav-links a { text-decoration: none; color: #111; font-weight: 500; }
-    .nav-links a.active { color: #ff6a00; }
-    .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
-    .menu-toggle span { width: 25px; height: 3px; background: #111; border-radius: 2px; }
-
-    @media (max-width: 768px) {
-      .nav-links { position: absolute; top: 100%; right: 0; background: #fff; flex-direction: column; width: 200px; transform: translateX(100%); transition: transform 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-      .nav-links.active { transform: translateX(0); }
-      .menu-toggle { display: flex; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    header { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(180deg, #ffffff, #eaeaea); padding-top: 80px; overflow: hidden; }
-    header h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; letter-spacing: -2px; z-index: 1; position: relative; }
-    header span { color: #777; font-weight: 300; }
-    header p { margin-top: 1.5rem; font-size: 1.2rem; max-width: 600px; color: #555; z-index: 1; position: relative; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f5;
+      color: #111;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-    #particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e0e0e0;
+      z-index: 1000;
+    }
 
-    section { padding: 6rem 2rem; max-width: 1200px; margin: auto; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
-    .box { background: #ffffff; border-radius: 16px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .box:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
-    .box h2 { font-size: 1.5rem; margin-bottom: 1rem; }
-    .box p { color: #444; font-size: 0.95rem; }
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    .divider { width: 80px; height: 2px; background: #111; margin: 4rem auto; }
-    .cta { text-align: center; }
-    .cta a { display: inline-block; margin-top: 2rem; padding: 1rem 2.8rem; border-radius: 40px; border: 2px solid #111; text-decoration: none; color: #111; font-weight: 600; transition: all 0.3s ease; }
-    .cta a:hover { background: #111; color: #fff; }
+    .logo {
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
 
-    footer { padding: 3rem 1rem; text-align: center; font-size: 0.85rem; color: #777; }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff6a00;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #111;
+      border-radius: 2px;
+    }
+
+    header {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff, #eaeaea);
+      padding: 100px 2rem 4rem;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -2px;
+      z-index: 1;
+      position: relative;
+    }
+
+    header h1 span {
+      color: #777;
+      font-weight: 300;
+    }
+
+    .hero-tagline {
+      margin-top: 1.5rem;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      max-width: 900px;
+      color: #333;
+      z-index: 1;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .hero-description {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      max-width: 760px;
+      color: #666;
+      z-index: 1;
+      position: relative;
+    }
+
+    #particles-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+      scroll-margin-top: 90px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      margin: 0 auto 3.5rem;
+      text-align: center;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .box h2,
+    .box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .box p {
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .box ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+      color: #444;
+    }
+
+    .box li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #111;
+    }
+
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: #111;
+      margin: 4rem auto;
+    }
+
+    .technology-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .technology-group {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+    }
+
+    .technology-group h3 {
+      margin-bottom: 0.8rem;
+      font-size: 1.15rem;
+    }
+
+    .technology-group p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .contact-text {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      color: #444;
+    }
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2.8rem;
+      border-radius: 40px;
+      border: 2px solid #111;
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cta a:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    footer {
+      padding: 3rem 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        width: 240px;
+        padding: 1.5rem;
+        gap: 1rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        transform: translateX(0);
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      header {
+        min-height: 90vh;
+      }
+
+      section {
+        padding: 4rem 1.2rem;
+      }
+    }
   </style>
 </head>
+
 <body>
 
+  <!-- Navigation -->
   <nav>
     <div class="nav-container">
       <div class="logo">Northern Solutions L.L.C.</div>
+
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#projects">Applications</a></li>
+        <li><a href="#technologies">Technologies</a></li>
         <li><a href="#philosophy">Philosophy</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="menu-toggle" id="menu-toggle">
+
+      <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
         <span></span>
         <span></span>
         <span></span>
@@ -67,70 +342,565 @@
     </div>
   </nav>
 
-  <header>
+
+  <!-- Hero -->
+  <header id="home">
     <canvas id="particles-canvas"></canvas>
-    <h1>Northern <span>Solutions</span></h1>
-    <p>Custom Scientific Software • Cloud & Web Applications • AI & Data Analytics • Reliable Software • Scalable Solutions</p>
+
+    <h1>
+      Northern <span>Solutions</span>
+    </h1>
+
+    <p class="hero-tagline">
+      Scientific Computing • Molecular Dynamics • High-Performance Computing • AI for Materials
+    </p>
+
+    <p class="hero-description">
+      Computational solutions for materials, molecules, and high-performance scientific computing.
+      We combine physics-based simulation, scientific software development, and machine learning
+      to address complex problems in research and engineering.
+    </p>
   </header>
 
-  <section>
+
+  <!-- About -->
+  <section id="about">
+
+    <h2 class="section-title">About</h2>
+
+    <p class="section-intro">
+      Northern Solutions L.L.C. develops advanced computational solutions for scientific
+      research, engineering, and materials innovation.
+    </p>
+
     <div class="grid">
-      <div class="box" id="about">
-        <h2>About</h2>
-        <p>Northern Solutions LLC builds custom software, web applications, cloud platforms, and AI-powered solutions. We combine modern engineering, scalable architecture, and data-driven innovation to deliver reliable technologies that help businesses and research organizations solve complex challenges. Our expertise spans the entire development lifecycle, from concept and system design to deployment, integration, and long-term support.</p>
+
+      <div class="box">
+        <h3>Scientific Computing</h3>
+
+        <p>
+          We specialize in computational modeling of materials and molecular systems using
+          atomistic simulation, electronic-structure methods, molecular dynamics, and
+          high-performance scientific computing.
+        </p>
       </div>
 
-      <div class="box" id="projects">
-        <h2>Projects</h2>
-        <p>We develop custom software solutions that combine modern web technologies, cloud computing, data science, and artificial intelligence to solve complex technical challenges. Our portfolio includes web applications, scientific software, data analytics platforms, machine learning solutions, interactive visualizations, and custom business applications designed for research, industry, and government organizations.</p>
+      <div class="box">
+        <h3>Physics-Based Modeling</h3>
+
+        <p>
+          Our work connects first-principles calculations, classical atomistic simulations,
+          and data-driven methods to investigate structure, thermodynamics, transport,
+          diffusion, interfaces, and materials properties across multiple length and time scales.
+        </p>
       </div>
 
-      <div class="box" id="philosophy">
-        <h2>Philosophy</h2>
-        <p><p>We believe great software is built on simplicity, reliability, and innovation. Every solution we develop is designed with purpose—combining modern technologies, scalable architectures, and cleanve complex scientific and business challenges. Our goal is to create secure, efficient, and maintainable software that delivers long-term value and empowers our clients to innovate with confidence.</p>
+      <div class="box">
+        <h3>Scientific Software</h3>
+
+        <p>
+          We develop, optimize, deploy, and support scientific software and computational
+          workflows for modern CPU- and GPU-based high-performance computing environments.
+        </p>
       </div>
+
+    </div>
+  </section>
+
+
+  <!-- Capabilities -->
+  <section id="capabilities">
+
+    <h2 class="section-title">Scientific Capabilities</h2>
+
+    <p class="section-intro">
+      From quantum-mechanical calculations to large-scale molecular dynamics and
+      machine-learning interatomic potentials, Northern Solutions supports the complete
+      scientific simulation workflow.
+    </p>
+
+    <div class="grid">
+
+      <div class="box">
+        <h3>Molecular Dynamics</h3>
+
+        <p>
+          Classical and atomistic molecular dynamics simulations of liquids, electrolytes,
+          polymers, interfaces, metals, alloys, and molecular systems.
+        </p>
+
+        <ul>
+          <li>Classical molecular dynamics</li>
+          <li>Polarizable force fields</li>
+          <li>Transport and diffusion calculations</li>
+          <li>Viscosity and ionic conductivity</li>
+          <li>Interfacial and structural analysis</li>
+          <li>Large-scale parallel simulations</li>
+        </ul>
+      </div>
+
+
+      <div class="box">
+        <h3>Electronic Structure & DFT</h3>
+
+        <p>
+          First-principles calculations for understanding electronic structure,
+          energetics, bonding, diffusion, and materials properties.
+        </p>
+
+        <ul>
+          <li>Density functional theory</li>
+          <li>Ab initio molecular dynamics</li>
+          <li>Geometry optimization</li>
+          <li>Electronic density of states</li>
+          <li>Diffusion barriers and NEB calculations</li>
+          <li>Defects and interstitial atoms</li>
+        </ul>
+      </div>
+
+
+      <div class="box">
+        <h3>High-Performance Computing</h3>
+
+        <p>
+          Design and optimization of scientific simulation environments for modern
+          HPC clusters and GPU-accelerated systems.
+        </p>
+
+        <ul>
+          <li>MPI and OpenMP parallel computing</li>
+          <li>GPU acceleration and CUDA</li>
+          <li>Slurm workflows</li>
+          <li>Scientific software compilation</li>
+          <li>Performance optimization and scaling</li>
+          <li>Apptainer and Singularity containers</li>
+        </ul>
+      </div>
+
+
+      <div class="box">
+        <h3>AI & Machine Learning for Science</h3>
+
+        <p>
+          Integration of machine learning with atomistic and quantum-mechanical
+          simulations to accelerate materials modeling and scientific discovery.
+        </p>
+
+        <ul>
+          <li>Machine-learning interatomic potentials</li>
+          <li>DeePMD-based simulations</li>
+          <li>Active learning</li>
+          <li>Scientific machine learning</li>
+          <li>Materials informatics</li>
+          <li>Automated simulation-data analysis</li>
+        </ul>
+      </div>
+
+
+      <div class="box">
+        <h3>Force-Field Development</h3>
+
+        <p>
+          Development, fitting, parameterization, and validation of interaction
+          potentials for molecular and materials simulations.
+        </p>
+
+        <ul>
+          <li>Classical force fields</li>
+          <li>Polarizable force fields</li>
+          <li>Electronic-density-based models</li>
+          <li>DFT-derived interatomic potentials</li>
+          <li>Machine-learning potentials</li>
+        </ul>
+      </div>
+
+
+      <div class="box">
+        <h3>Scientific Software Development</h3>
+
+        <p>
+          Development of research software, simulation workflows, parallel algorithms,
+          data-analysis tools, and reproducible computational environments.
+        </p>
+
+        <ul>
+          <li>Python scientific applications</li>
+          <li>C/C++ scientific software</li>
+          <li>Fortran scientific computing</li>
+          <li>MPI parallelization</li>
+          <li>Workflow automation</li>
+          <li>Simulation data processing</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Applications / Projects -->
+  <section id="projects">
+
+    <h2 class="section-title">Research & Engineering Applications</h2>
+
+    <p class="section-intro">
+      Our computational methods can be applied across materials science,
+      chemistry, energy storage, molecular systems, and advanced engineering.
+    </p>
+
+    <div class="grid">
+
+      <div class="box">
+        <h3>Machine-Learning Interatomic Potentials</h3>
+
+        <p>
+          Development of machine-learning potentials trained on first-principles
+          data for large-scale molecular dynamics simulations with near-DFT accuracy.
+        </p>
+      </div>
+
+
+      <div class="box">
+        <h3>Hydrogen Diffusion in Metals</h3>
+
+        <p>
+          First-principles and atomistic simulations of hydrogen migration,
+          trapping, diffusion barriers, local bonding, and electronic interactions
+          in metallic materials.
+        </p>
+      </div>
+
+
+      <div class="box">
+        <h3>Battery Electrolytes</h3>
+
+        <p>
+          Molecular simulation and force-field development for lithium-ion
+          electrolytes, including ion solvation, transport properties, diffusion,
+          conductivity, and concentrated electrolyte environments.
+        </p>
+      </div>
+
+
+      <div class="box">
+        <h3>Metals & Alloys</h3>
+
+        <p>
+          Atomistic and electronic-structure modeling of metals, high-entropy alloys,
+          defects, interfaces, structural stability, transport, and mechanical behavior.
+        </p>
+      </div>
+
+
+      <div class="box">
+        <h3>Interfaces & Molecular Systems</h3>
+
+        <p>
+          Molecular-level investigation of liquids, polymers, ionic liquids,
+          surfaces, interfaces, and complex molecular environments.
+        </p>
+      </div>
+
+
+      <div class="box">
+        <h3>HPC Scientific Environments</h3>
+
+        <p>
+          Reproducible and optimized computational environments for scientific
+          applications using MPI, GPUs, containers, and modern HPC schedulers.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Technologies -->
+  <section id="technologies">
+
+    <h2 class="section-title">Computational Technologies</h2>
+
+    <p class="section-intro">
+      We work with established scientific software, programming languages,
+      and high-performance computing technologies.
+    </p>
+
+    <div class="technology-groups">
+
+      <div class="technology-group">
+        <h3>Electronic Structure</h3>
+        <p>
+          VASP • CP2K • Gaussian • DFT • AIMD • NEB
+        </p>
+      </div>
+
+
+      <div class="technology-group">
+        <h3>Molecular Simulation</h3>
+        <p>
+          LAMMPS • GROMACS • Amber • NAMD
+        </p>
+      </div>
+
+
+      <div class="technology-group">
+        <h3>AI & Machine Learning</h3>
+        <p>
+          DeePMD-kit • Machine-Learning Interatomic Potentials •
+          Active Learning • Python
+        </p>
+      </div>
+
+
+      <div class="technology-group">
+        <h3>High-Performance Computing</h3>
+        <p>
+          Linux • Slurm • MPI • OpenMP • CUDA • Apptainer • Singularity
+        </p>
+      </div>
+
+
+      <div class="technology-group">
+        <h3>Scientific Programming</h3>
+        <p>
+          Python • C • C++ • Fortran
+        </p>
+      </div>
+
+
+      <div class="technology-group">
+        <h3>Scientific Analysis</h3>
+        <p>
+          Atomistic Data Analysis • Statistical Modeling • Visualization •
+          Automated Workflows
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Philosophy -->
+  <section id="philosophy">
+
+    <h2 class="section-title">Philosophy</h2>
+
+    <div class="box">
+
+      <p>
+        Scientific software must be accurate, reproducible, scalable, and
+        grounded in the underlying physics.
+      </p>
+
+      <br />
+
+      <p>
+        Northern Solutions combines scientific understanding with modern
+        computational methods to build reliable simulation workflows and
+        research software. Our approach emphasizes numerical accuracy,
+        reproducibility, efficient use of high-performance computing resources,
+        transparent methodology, and maintainable software.
+      </p>
+
+      <br />
+
+      <p>
+        Our goal is to help researchers and engineering organizations move
+        efficiently from scientific questions to computational models,
+        large-scale simulations, data analysis, and actionable scientific insight.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- Contact -->
+  <section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <p class="contact-text">
+      Interested in scientific computing, molecular dynamics, materials modeling,
+      high-performance computing, machine learning, or custom scientific software?
+      Contact Northern Solutions to discuss your research or engineering project.
+    </p>
+
+    <div class="cta">
+      <a href="mailto:qmpotential@gmail.com">
+        qmpotential@gmail.com
+      </a>
     </div>
 
-    <div class="divider"></div>
+  </section>
 
-<p>
-    Interested in working with us or discussing your next project?
-    We'd be happy to hear from you. Send us an email, and we'll get
-    back to you as soon as possible.
-</p>
 
-<div class="cta" id="contact">
-    <a href="mailto:qmpotential@gmail.com">qmpotential@gmail.com</a>
-</div>
+  <!-- Footer -->
+  <footer>
+    © 2016–2026 Northern Solutions L.L.C. · Scientific Computing · Molecular Dynamics · HPC · AI
+  </footer>
 
-  <footer>© 2016 Northern Solutions L.L.C. · Minimal by design · Hosted on GitHub Pages</footer>
 
+  <!-- JavaScript -->
   <script>
+
+    /* Mobile navigation */
     const toggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
 
-    const sections = document.querySelectorAll('section, header');
-    const navItems = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => { const sectionTop = section.offsetTop - 100; if (pageYOffset >= sectionTop) { current = section.getAttribute('id'); } });
-      navItems.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === '#' + current) { link.classList.add('active'); } });
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
 
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+
+    /* Active navigation item */
+    const sections = document.querySelectorAll('section, header');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+
+      let current = '';
+
+      sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 140;
+
+        if (window.pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+
+      });
+
+      navItems.forEach(link => {
+
+        link.classList.remove('active');
+
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+
+      });
+
+    });
+
+
+    /* Scientific particle animation */
     const canvas = document.getElementById('particles-canvas');
     const ctx = canvas.getContext('2d');
+
     let particles = [];
-    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
     window.addEventListener('resize', resizeCanvas);
+
     resizeCanvas();
 
-    class Particle { constructor() { this.x = Math.random()*canvas.width; this.y = Math.random()*canvas.height; this.radius = Math.random()*6+1; this.dx=(Math.random()-0.5)*1.2; this.dy=(Math.random()-0.5)*1.2;} draw(){ ctx.beginPath(); ctx.arc(this.x,this.y,this.radius,0,Math.PI*2); ctx.fillStyle='#aaa'; ctx.fill(); } update(){ this.x+=this.dx; this.y+=this.dy; if(this.x<0||this.x>canvas.width) this.dx*=-1; if(this.y<0||this.y>canvas.height) this.dy*=-1; this.draw(); } }
-    function initParticles(num=80){ particles=[]; for(let i=0;i<num;i++){ particles.push(new Particle()); } }
+
+    class Particle {
+
+      constructor() {
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.radius = Math.random() * 4 + 1;
+
+        this.dx = (Math.random() - 0.5) * 0.8;
+        this.dy = (Math.random() - 0.5) * 0.8;
+
+      }
+
+      draw() {
+
+        ctx.beginPath();
+
+        ctx.arc(
+          this.x,
+          this.y,
+          this.radius,
+          0,
+          Math.PI * 2
+        );
+
+        ctx.fillStyle = '#aaa';
+        ctx.fill();
+
+      }
+
+      update() {
+
+        this.x += this.dx;
+        this.y += this.dy;
+
+        if (
+          this.x < 0 ||
+          this.x > canvas.width
+        ) {
+          this.dx *= -1;
+        }
+
+        if (
+          this.y < 0 ||
+          this.y > canvas.height
+        ) {
+          this.dy *= -1;
+        }
+
+        this.draw();
+
+      }
+
+    }
+
+
+    function initParticles(num = 80) {
+
+      particles = [];
+
+      for (let i = 0; i < num; i++) {
+        particles.push(new Particle());
+      }
+
+    }
+
+
     initParticles();
-    function animate(){ requestAnimationFrame(animate); ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p=>p.update()); }
+
+
+    function animate() {
+
+      requestAnimationFrame(animate);
+
+      ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      particles.forEach(
+        particle => particle.update()
+      );
+
+    }
+
+
     animate();
+
   </script>
+
+</body>
+</html>
+```
+
 
 </body>
 </html>
