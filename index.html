@@ -380,6 +380,30 @@
       box-shadow: none !important;
     }
 
+
+    /* Contact integrated into footer image */
+    footer {
+      min-height: 520px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 5rem;
+    }
+    .footer-contact {
+      position: relative;
+      z-index: 2;
+      width: min(900px, calc(100% - 2.4rem));
+      text-align: center;
+      color: #fff;
+    }
+    .footer-contact .section-title { color: #fff; }
+    .footer-contact .contact-text { color: rgba(255,255,255,.92); }
+    .footer-contact .cta a {
+      color: #fff;
+      border-color: #fff;
+      background: rgba(0,12,28,.22);
+    }
+    .footer-contact .cta a:hover { background: #fff; color: #071a2d; }
   </style>
 </head>
 
@@ -393,7 +417,6 @@
       <li><a href="#about">About</a></li>
       <li><a href="#capabilities">Capabilities</a></li>
       <li><a href="#technologies">Technologies</a></li>
-      <li><a href="#philosophy">Philosophy</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
@@ -570,67 +593,21 @@
 
 </section>
 
-<section id="philosophy">
-
-  <h2 class="section-title">
-    Philosophy
-  </h2>
-
-  <div class="box philosophy-box">
-
-    <p>
-      Scientific computing should be accurate, reproducible, scalable,
-      and grounded in physical understanding.
+<footer id="contact">
+  <div class="footer-contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-text">
+      Interested in scientific computing, materials modeling, high-performance computing,
+      artificial intelligence, or custom scientific software?
+      Contact Northern Solutions to discuss your research or engineering project.
     </p>
-
-    <br>
-
-    <p>
-      Northern Solutions combines scientific knowledge with modern computational
-      methods to build reliable models, workflows, and research software.
-      Our approach emphasizes numerical accuracy, reproducibility, efficient use
-      of computational resources, and clear scientific interpretation.
-    </p>
-
-    <br>
-
-    <p>
-      Our goal is to help researchers and engineering organizations move efficiently
-      from scientific questions to computational models, simulations, data analysis,
-      and meaningful scientific insight.
-    </p>
-
+    <div class="cta">
+      <a href="mailto:qmpotential@gmail.com">qmpotential@gmail.com</a>
+    </div>
   </div>
-
-</section>
-
-<section id="contact">
-
-  <h2 class="section-title">
-    Contact
-  </h2>
-
-  <p class="contact-text">
-    Interested in scientific computing, materials modeling, high-performance computing,
-    artificial intelligence, or custom scientific software?
-    Contact Northern Solutions to discuss your research or engineering project.
-  </p>
-
-  <div class="cta">
-    <a href="mailto:qmpotential@gmail.com">
-      qmpotential@gmail.com
-    </a>
-  </div>
-
-</section>
-
-<footer>
   <div class="footer-text">
     © 2016–2026 Northern Solutions L.L.C.
-    · Scientific Computing
-    · Materials Modeling
-    · HPC
-    · AI
+    · Scientific Computing · Materials Modeling · HPC · AI
   </div>
 </footer>
 
@@ -779,7 +756,5 @@
   animate();
 </script>
 
-</body>
-</html>
 </body>
 </html>
