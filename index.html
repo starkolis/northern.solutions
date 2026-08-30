@@ -1,51 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>
-    Northern Solutions L.L.C. |
-    Scientific Computing, Molecular Dynamics, HPC & AI
-  </title>
+  <title>Northern Solutions L.L.C. | Scientific Computing, Materials Modeling, HPC & AI</title>
 
   <meta
     name="description"
-    content="
-    Northern Solutions L.L.C. provides scientific computing,
-    molecular dynamics, density functional theory,
-    high-performance computing, scientific software development,
-    and artificial intelligence solutions for materials science
-    and molecular simulation.
-    "
+    content="Northern Solutions L.L.C. provides scientific computing, computational materials modeling, high-performance computing, artificial intelligence, and custom scientific software solutions."
   >
 
   <meta
     name="keywords"
-    content="
-    scientific computing,
-    molecular dynamics,
-    MD simulation,
-    density functional theory,
-    DFT,
-    high-performance computing,
-    HPC,
-    artificial intelligence,
-    machine learning,
-    computational materials science,
-    atomistic simulation,
-    LAMMPS,
-    VASP,
-    CP2K,
-    GROMACS,
-    DeePMD,
-    scientific software
-    "
+    content="scientific computing, computational materials science, molecular simulation, high-performance computing, HPC, artificial intelligence, machine learning, materials modeling, scientific software"
   >
 
   <link
@@ -54,11 +22,6 @@
   >
 
   <style>
-
-    /* =========================================================
-       GLOBAL
-       ========================================================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -70,17 +33,10 @@
       --background: #f5f5f5;
       --white: #ffffff;
       --black: #111111;
-      --dark-gray: #333333;
-      --medium-gray: #555555;
-      --light-gray: #e5e5e5;
-
+      --gray-medium: #555555;
       --accent: #ff6a00;
-
-      --shadow:
-        0 20px 40px rgba(0, 0, 0, 0.08);
-
-      --shadow-hover:
-        0 30px 60px rgba(0, 0, 0, 0.16);
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.15);
     }
 
     body {
@@ -95,37 +51,73 @@
       padding: 6rem 2rem;
       max-width: 1200px;
       margin: auto;
-
       scroll-margin-top: 90px;
     }
 
+    .section-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
 
-    /* =========================================================
-       NAVIGATION
-       ========================================================= */
+    .section-title {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      margin: 0 auto 3.5rem;
+      text-align: center;
+      color: var(--gray-medium);
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .box {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .box h3 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .box p {
+      color: #444;
+      font-size: 0.96rem;
+    }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-
-      background:
-        rgba(255, 255, 255, 0.94);
-
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
-
-      border-bottom:
-        1px solid rgba(0, 0, 0, 0.08);
-
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       z-index: 1000;
     }
 
     .nav-container {
       max-width: 1200px;
       margin: auto;
-
       padding: 1rem 2rem;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -138,25 +130,16 @@
 
     .nav-links {
       list-style: none;
-
       display: flex;
-      gap: 1.7rem;
-    }
-
-    .nav-links li {
-      position: relative;
+      gap: 1.6rem;
     }
 
     .nav-links a {
       text-decoration: none;
-
       color: var(--black);
-
       font-weight: 500;
       font-size: 0.9rem;
-
-      transition:
-        color 0.3s ease;
+      transition: color 0.3s ease;
     }
 
     .nav-links a:hover,
@@ -166,97 +149,56 @@
 
     .menu-toggle {
       display: none;
-
       flex-direction: column;
-
       cursor: pointer;
-
       gap: 4px;
     }
 
     .menu-toggle span {
       width: 25px;
       height: 3px;
-
       background: var(--black);
-
       border-radius: 2px;
     }
 
-
-    /* =========================================================
-       HERO
-       ========================================================= */
-
     header {
       position: relative;
-
       min-height: 100vh;
-
       display: flex;
-      flex-direction: column;
-
       justify-content: center;
       align-items: center;
-
       text-align: center;
-
-      padding:
-        110px 2rem 5rem;
-
-      background:
-        radial-gradient(
-          circle at center,
-          #ffffff 0%,
-          #f6f6f6 45%,
-          #e5e5e5 100%
-        );
-
+      padding: 110px 2rem 5rem;
+      background: radial-gradient(circle at center, #ffffff 0%, #f6f6f6 45%, #e4e4e4 100%);
       overflow: hidden;
     }
 
     header::after {
       content: "";
-
       position: absolute;
-
       inset: 0;
-
-      background:
-        radial-gradient(
-          circle at center,
-          transparent 20%,
-          rgba(255,255,255,0.3) 100%
-        );
-
+      background: radial-gradient(circle at center, transparent 20%, rgba(255, 255, 255, 0.30) 100%);
       pointer-events: none;
     }
 
     #particles-canvas {
       position: absolute;
-
-      top: 0;
-      left: 0;
-
+      inset: 0;
       width: 100%;
       height: 100%;
-
       z-index: 0;
-
-      opacity: 0.75;
+      opacity: 0.7;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
+      max-width: 1000px;
     }
 
     header h1 {
-      font-size:
-        clamp(3rem, 7vw, 5.4rem);
-
+      font-size: clamp(3rem, 7vw, 5.4rem);
       font-weight: 900;
-
       letter-spacing: -3px;
     }
 
@@ -267,161 +209,33 @@
 
     .hero-tagline {
       margin-top: 1.6rem;
-
-      font-size:
-        clamp(1rem, 2vw, 1.3rem);
-
-      max-width: 950px;
-
+      font-size: clamp(1rem, 2vw, 1.3rem);
       color: #252525;
-
       font-weight: 600;
     }
 
     .hero-description {
-      margin:
-        1.3rem auto 0;
-
+      margin: 1.3rem auto 0;
       max-width: 760px;
-
       color: #606060;
-
       font-size: 1rem;
     }
 
     .hero-button {
       display: inline-block;
-
       margin-top: 2.2rem;
-
-      padding:
-        0.9rem 2rem;
-
-      border:
-        2px solid var(--black);
-
+      padding: 0.9rem 2rem;
+      border: 2px solid var(--black);
       border-radius: 30px;
-
       color: var(--black);
-
       text-decoration: none;
-
       font-weight: 600;
-
       transition: all 0.3s ease;
     }
 
     .hero-button:hover {
       background: var(--black);
       color: #fff;
-    }
-
-
-    /* =========================================================
-       GENERAL SECTIONS
-       ========================================================= */
-
-    .section-title {
-      text-align: center;
-
-      font-size:
-        clamp(2rem, 4vw, 3rem);
-
-      margin-bottom: 1rem;
-
-      font-weight: 800;
-
-      letter-spacing: -1px;
-    }
-
-    .section-intro {
-      max-width: 850px;
-
-      margin:
-        0 auto 3.5rem;
-
-      text-align: center;
-
-      color: var(--medium-gray);
-    }
-
-    .grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(280px, 1fr)
-        );
-
-      gap: 2rem;
-    }
-
-    .box {
-      background: var(--white);
-
-      border-radius: 16px;
-
-      padding: 2.5rem;
-
-      box-shadow: var(--shadow);
-
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-    }
-
-    .box:hover {
-      transform:
-        translateY(-7px);
-
-      box-shadow:
-        var(--shadow-hover);
-    }
-
-    .box h3 {
-      font-size: 1.35rem;
-
-      margin-bottom: 1rem;
-    }
-
-    .box p {
-      color: #444;
-
-      font-size: 0.95rem;
-    }
-
-    .box ul {
-      padding-left: 1.2rem;
-
-      margin-top: 1rem;
-    }
-
-    .box li {
-      margin-bottom: 0.45rem;
-
-      color: #444;
-    }
-
-
-    /* =========================================================
-       ABOUT
-       ========================================================= */
-
-    #about {
-      position: relative;
-    }
-
-    .about-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(280px, 1fr)
-        );
-
-      gap: 2rem;
     }
 
     .about-card {
@@ -431,249 +245,87 @@
 
     .about-number {
       position: absolute;
-
       right: 1.5rem;
       top: 1rem;
-
       font-size: 4rem;
-
       font-weight: 900;
-
-      color:
-        rgba(0, 0, 0, 0.04);
+      color: rgba(0, 0, 0, 0.04);
     }
 
+    .about-profile {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+    }
 
-    /* =========================================================
-       CAPABILITIES
-       ========================================================= */
+    .about-profile a {
+      color: #111;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid #bbb;
+      transition: all 0.3s ease;
+    }
+
+    .about-profile a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
 
     #capabilities {
       max-width: none;
-
-      background:
-        linear-gradient(
-          180deg,
-          #eeeeee,
-          #f8f8f8
-        );
-    }
-
-    .section-inner {
-      max-width: 1200px;
-
-      margin: auto;
+      background: linear-gradient(180deg, #eeeeee, #f8f8f8);
     }
 
     .capability-card {
-      border-top:
-        3px solid #222;
+      border-top: 3px solid #222;
     }
 
-
-    /* =========================================================
-       APPLICATION CARDS WITH SCIENTIFIC BACKGROUND IMAGES
-       ========================================================= */
-
+    /* Research & Engineering Applications */
     #projects {
+      max-width: none;
+      background: #ffffff;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .applications-inner {
       max-width: 1200px;
+      margin: auto;
+      padding: 0 2rem;
     }
 
-    .application-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(330px, 1fr)
-        );
-
-      gap: 2rem;
-    }
-
-    .application-card {
-      position: relative;
-
-      min-height: 390px;
-
-      border-radius: 18px;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 20px 40px
-        rgba(0, 0, 0, 0.16);
-
-      isolation: isolate;
-
-      transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-    }
-
-    .application-card:hover {
-      transform:
-        translateY(-8px)
-        scale(1.01);
-
-      box-shadow:
-        0 32px 70px
-        rgba(0, 0, 0, 0.25);
-    }
-
-    .application-background {
-      position: absolute;
-
-      inset: 0;
-
-      z-index: -3;
-    }
-
-    .application-background svg {
-      width: 100%;
-      height: 100%;
-
-      display: block;
-    }
-
-    .application-card::after {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      z-index: -1;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(0,0,0,0.90) 0%,
-          rgba(0,0,0,0.60) 42%,
-          rgba(0,0,0,0.10) 100%
-        );
-    }
-
-    .application-content {
-      height: 100%;
-
-      padding: 2.3rem;
-
-      display: flex;
-      flex-direction: column;
-
-      justify-content: flex-end;
-    }
-
-    .application-content h3 {
-      color: #ffffff;
-
-      font-size: 1.5rem;
-
-      margin-bottom: 0.8rem;
-    }
-
-    .application-content p {
-      color:
-        rgba(255,255,255,0.88);
-
-      font-size: 0.94rem;
-    }
-
-    .application-label {
-      display: inline-block;
-
-      width: fit-content;
-
-      margin-bottom: 0.8rem;
-
-      padding:
-        0.3rem 0.7rem;
-
-      border:
-        1px solid
-        rgba(255,255,255,0.55);
-
+    .applications-figure {
+      margin-top: 2rem;
+      background: #fff;
       border-radius: 20px;
-
-      color: #fff;
-
-      font-size: 0.72rem;
-
-      font-weight: 600;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
     }
 
+    .applications-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-    /* =========================================================
-       TECHNOLOGIES
-       ========================================================= */
+    .applications-caption {
+      max-width: 850px;
+      margin: 2rem auto 0;
+      text-align: center;
+      color: #555;
+      font-size: 0.95rem;
+    }
 
     #technologies {
       max-width: none;
-
-      background:
-        #ededed;
+      background: #ededed;
     }
-
-    .technology-groups {
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(240px, 1fr)
-        );
-
-      gap: 2rem;
-    }
-
-    .technology-group {
-      background: #fff;
-
-      padding: 2rem;
-
-      border-radius: 14px;
-
-      box-shadow:
-        0 15px 35px
-        rgba(0,0,0,0.07);
-    }
-
-    .technology-group h3 {
-      margin-bottom: 0.8rem;
-
-      font-size: 1.15rem;
-    }
-
-    .technology-group p {
-      color: #555;
-
-      font-size: 0.93rem;
-
-      line-height: 1.9;
-    }
-
-
-    /* =========================================================
-       PHILOSOPHY
-       ========================================================= */
 
     .philosophy-box {
       max-width: 900px;
-
       margin: auto;
-
-      text-align: left;
     }
-
-
-    /* =========================================================
-       CONTACT
-       ========================================================= */
 
     #contact {
       text-align: center;
@@ -681,1512 +333,257 @@
 
     .contact-text {
       max-width: 720px;
-
       margin: auto;
-
       color: #444;
     }
 
     .cta a {
       display: inline-block;
-
       margin-top: 2rem;
-
-      padding:
-        1rem 2.8rem;
-
+      padding: 1rem 2.8rem;
       border-radius: 40px;
-
-      border:
-        2px solid #111;
-
+      border: 2px solid #111;
       text-decoration: none;
-
       color: #111;
-
       font-weight: 600;
-
       transition: all 0.3s ease;
     }
 
     .cta a:hover {
       background: #111;
-
       color: #fff;
     }
 
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
     footer {
-      padding:
-        3rem 1rem;
-
+      padding: 3rem 1rem;
       text-align: center;
-
       font-size: 0.85rem;
-
       color: #777;
     }
 
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media
-    (max-width: 900px) {
-
+    @media (max-width: 900px) {
       .nav-links {
         position: absolute;
-
         top: 100%;
         right: 0;
-
         width: 250px;
-
         padding: 1.5rem;
-
         background: #fff;
-
         flex-direction: column;
-
         gap: 1rem;
-
-        transform:
-          translateX(100%);
-
-        transition:
-          transform 0.3s ease;
-
-        box-shadow:
-          0 10px 25px
-          rgba(0,0,0,0.12);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
       }
 
       .nav-links.active {
-        transform:
-          translateX(0);
+        transform: translateX(0);
       }
 
       .menu-toggle {
         display: flex;
       }
-
     }
 
-
-    @media
-    (max-width: 600px) {
-
+    @media (max-width: 600px) {
       section {
-        padding:
-          4.5rem 1.2rem;
+        padding: 4.5rem 1.2rem;
       }
 
-      header h1 {
-        letter-spacing: -2px;
+      .applications-inner {
+        padding: 0 1.2rem;
       }
 
-      .application-grid {
-        grid-template-columns: 1fr;
+      .applications-figure {
+        border-radius: 14px;
       }
-
-      .application-card {
-        min-height: 350px;
-      }
-
     }
-
   </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================================================
-     NAVIGATION
-     ========================================================= -->
-
 <nav>
-
   <div class="nav-container">
-
-    <div class="logo">
-      Northern Solutions L.L.C.
-    </div>
+    <div class="logo">Northern Solutions L.L.C.</div>
 
     <ul class="nav-links">
-
-      <li>
-        <a href="#about">
-          About
-        </a>
-      </li>
-
-      <li>
-        <a href="#capabilities">
-          Capabilities
-        </a>
-      </li>
-
-      <li>
-        <a href="#projects">
-          Applications
-        </a>
-      </li>
-
-      <li>
-        <a href="#technologies">
-          Technologies
-        </a>
-      </li>
-
-      <li>
-        <a href="#philosophy">
-          Philosophy
-        </a>
-      </li>
-
-      <li>
-        <a href="#contact">
-          Contact
-        </a>
-      </li>
-
+      <li><a href="#about">About</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#projects">Applications</a></li>
+      <li><a href="#technologies">Technologies</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
 
-
-    <div
-      class="menu-toggle"
-      id="menu-toggle"
-      aria-label="Toggle navigation"
-    >
-
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
-
     </div>
-
   </div>
-
 </nav>
 
-
-
-<!-- =========================================================
-     HERO
-     ========================================================= -->
-
 <header id="home">
-
-  <canvas
-    id="particles-canvas">
-  </canvas>
+  <canvas id="particles-canvas"></canvas>
 
   <div class="hero-content">
-
-    <h1>
-      Northern
-      <span>Solutions</span>
-    </h1>
+    <h1>Northern <span>Solutions</span></h1>
 
     <p class="hero-tagline">
-
       Scientific Computing
       &nbsp;•&nbsp;
-      Molecular Dynamics
+      Materials Modeling
       &nbsp;•&nbsp;
       High-Performance Computing
       &nbsp;•&nbsp;
-      AI for Materials
-
+      AI for Science
     </p>
-
 
     <p class="hero-description">
-
-      Computational solutions for materials,
-      molecules, and high-performance scientific computing.
-
-      We combine physics-based simulation,
-      scientific software development,
-      high-performance computing,
-      and machine learning to solve complex
-      research and engineering problems.
-
+      Computational solutions for materials, molecular systems, and advanced scientific research.
+      We combine physics-based modeling, scalable computing, scientific software, and data-driven
+      methods to address complex research and engineering challenges.
     </p>
 
-
-    <a
-      href="#capabilities"
-      class="hero-button"
-    >
+    <a href="#capabilities" class="hero-button">
       Explore Capabilities
     </a>
-
   </div>
-
 </header>
 
-
-
-<!-- =========================================================
-     ABOUT
-     ========================================================= -->
-
 <section id="about">
-
-  <h2 class="section-title">
-    About
-  </h2>
+  <h2 class="section-title">About</h2>
 
   <p class="section-intro">
-
-    Northern Solutions L.L.C. develops
-    advanced computational solutions
-    for scientific research,
-    engineering, and materials innovation.
-
+    Northern Solutions L.L.C. develops advanced computational solutions
+    for scientific research, engineering, and materials innovation.
   </p>
 
-
-  <div class="about-grid">
-
-
+  <div class="grid">
     <div class="box about-card">
-
-      <div class="about-number">
-        01
-      </div>
-
-      <h3>
-        Scientific Computing
-      </h3>
-
+      <div class="about-number">01</div>
+      <h3>Scientific Computing</h3>
       <p>
-
-        We specialize in computational
-        modeling of materials and molecular
-        systems using atomistic simulation,
-        electronic-structure methods,
-        molecular dynamics, and
-        high-performance scientific computing.
-
+        We apply computational methods to investigate materials, molecular systems,
+        and complex physical processes. Our work combines scientific insight,
+        numerical modeling, and modern computing to support research and engineering applications.
       </p>
-
     </div>
 
-
     <div class="box about-card">
-
-      <div class="about-number">
-        02
-      </div>
-
-      <h3>
-        Physics-Based Modeling
-      </h3>
-
+      <div class="about-number">02</div>
+      <h3>Physics-Based Modeling</h3>
       <p>
-
-        Our work connects first-principles
-        calculations, classical atomistic
-        simulations, statistical mechanics,
-        and data-driven approaches to study
-        structure, thermodynamics, transport,
-        diffusion, interfaces, and material
-        properties.
-
+        We develop computational models grounded in physical principles to better
+        understand relationships between microscopic interactions, structural behavior,
+        transport processes, and material properties.
       </p>
-
     </div>
 
-
     <div class="box about-card">
-
-      <div class="about-number">
-        03
-      </div>
-
-      <h3>
-        Scientific Software
-      </h3>
-
+      <div class="about-number">03</div>
+      <h3>Scientific Software</h3>
       <p>
-
-        We develop, optimize, deploy,
-        and support scientific applications
-        and computational workflows for
-        modern CPU- and GPU-based
-        high-performance computing systems.
-
+        We design and support efficient computational workflows and scientific software
+        environments that enable reproducible, scalable, and reliable research.
       </p>
-
     </div>
-
   </div>
 
+  <div class="about-profile">
+    Research Profile:
+    <a
+      href="https://orcid.org/0000-0002-5784-7312"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ORCID 0000-0002-5784-7312
+    </a>
+  </div>
 </section>
 
-
-
-<!-- =========================================================
-     SCIENTIFIC CAPABILITIES
-     ========================================================= -->
-
 <section id="capabilities">
-
   <div class="section-inner">
 
-    <h2 class="section-title">
-      Scientific Capabilities
-    </h2>
+    <h2 class="section-title">Scientific Capabilities</h2>
 
     <p class="section-intro">
-
-      From quantum-mechanical calculations
-      to large-scale molecular dynamics and
-      machine-learning interatomic potentials,
-      Northern Solutions supports the complete
-      scientific simulation workflow.
-
+      Northern Solutions combines computational science, physics-based modeling,
+      and advanced numerical methods to investigate complex materials and molecular systems.
     </p>
-
 
     <div class="grid">
 
-
       <div class="box capability-card">
-
-        <h3>
-          Molecular Dynamics
-        </h3>
-
+        <h3>Computational Modeling</h3>
         <p>
-
-          Classical and atomistic molecular
-          dynamics simulations of liquids,
-          electrolytes, polymers, interfaces,
-          metals, alloys, and molecular systems.
-
+          We develop and apply computational models to understand the structure,
+          behavior, and properties of materials and molecular systems. Simulation
+          provides insight into processes that are difficult, expensive, or impossible
+          to examine directly through experiments alone.
         </p>
-
-        <ul>
-
-          <li>
-            Classical molecular dynamics
-          </li>
-
-          <li>
-            Polarizable force fields
-          </li>
-
-          <li>
-            Transport and diffusion calculations
-          </li>
-
-          <li>
-            Viscosity and ionic conductivity
-          </li>
-
-          <li>
-            Structural and interfacial analysis
-          </li>
-
-          <li>
-            Large-scale parallel simulations
-          </li>
-
-        </ul>
-
       </div>
 
-
       <div class="box capability-card">
-
-        <h3>
-          Electronic Structure & DFT
-        </h3>
-
+        <h3>Multiscale Simulation</h3>
         <p>
-
-          First-principles calculations
-          for understanding electronic structure,
-          energetics, bonding, diffusion,
-          and materials properties.
-
+          We investigate scientific problems across multiple spatial and temporal scales.
+          By connecting microscopic interactions with larger-scale material behavior,
+          computational modeling can reveal relationships between structure, dynamics,
+          and performance.
         </p>
-
-        <ul>
-
-          <li>
-            Density functional theory
-          </li>
-
-          <li>
-            Ab initio molecular dynamics
-          </li>
-
-          <li>
-            Geometry optimization
-          </li>
-
-          <li>
-            Electronic density of states
-          </li>
-
-          <li>
-            NEB diffusion barriers
-          </li>
-
-          <li>
-            Defects and interstitial atoms
-          </li>
-
-        </ul>
-
       </div>
 
-
       <div class="box capability-card">
-
-        <h3>
-          High-Performance Computing
-        </h3>
-
+        <h3>Data-Driven Science</h3>
         <p>
-
-          Design and optimization of
-          scientific simulation environments
-          for modern HPC clusters and
-          GPU-accelerated systems.
-
+          We integrate physics-based modeling with modern data-driven methods to improve
+          predictive capability, accelerate computational studies, and identify relationships
+          within complex scientific datasets.
         </p>
-
-        <ul>
-
-          <li>
-            MPI parallel computing
-          </li>
-
-          <li>
-            OpenMP shared-memory computing
-          </li>
-
-          <li>
-            NVIDIA CUDA and GPU acceleration
-          </li>
-
-          <li>
-            Slurm workflows
-          </li>
-
-          <li>
-            Scientific software compilation
-          </li>
-
-          <li>
-            Apptainer and Singularity
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <div class="box capability-card">
-
-        <h3>
-          AI & Machine Learning for Science
-        </h3>
-
-        <p>
-
-          Integration of machine learning
-          with atomistic and quantum-mechanical
-          simulations to accelerate materials
-          modeling and scientific discovery.
-
-        </p>
-
-        <ul>
-
-          <li>
-            Machine-learning interatomic potentials
-          </li>
-
-          <li>
-            DeePMD-based simulations
-          </li>
-
-          <li>
-            Active learning
-          </li>
-
-          <li>
-            Scientific machine learning
-          </li>
-
-          <li>
-            Materials informatics
-          </li>
-
-          <li>
-            Automated simulation-data analysis
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <div class="box capability-card">
-
-        <h3>
-          Force-Field Development
-        </h3>
-
-        <p>
-
-          Development, fitting,
-          parameterization, and validation
-          of interaction potentials for
-          molecular and materials simulations.
-
-        </p>
-
-        <ul>
-
-          <li>
-            Classical force fields
-          </li>
-
-          <li>
-            Polarizable force fields
-          </li>
-
-          <li>
-            Electronic-density-based models
-          </li>
-
-          <li>
-            DFT-derived potentials
-          </li>
-
-          <li>
-            Machine-learning potentials
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <div class="box capability-card">
-
-        <h3>
-          Scientific Software Development
-        </h3>
-
-        <p>
-
-          Development of research software,
-          simulation workflows,
-          parallel algorithms,
-          data-analysis tools,
-          and reproducible environments.
-
-        </p>
-
-        <ul>
-
-          <li>
-            Python
-          </li>
-
-          <li>
-            C and C++
-          </li>
-
-          <li>
-            Fortran
-          </li>
-
-          <li>
-            MPI parallelization
-          </li>
-
-          <li>
-            Workflow automation
-          </li>
-
-          <li>
-            Simulation-data processing
-          </li>
-
-        </ul>
-
       </div>
 
     </div>
 
   </div>
-
 </section>
-
-
 
 <!-- =========================================================
      RESEARCH & ENGINEERING APPLICATIONS
+     Previous detailed cards removed.
      ========================================================= -->
 
 <section id="projects">
 
-  <h2 class="section-title">
-    Research & Engineering Applications
-  </h2>
-
-  <p class="section-intro">
-
-    Computational methods applied across
-    materials science, chemistry,
-    energy storage, molecular systems,
-    and advanced engineering.
-
-  </p>
-
-
-  <div class="application-grid">
-
-
-    <!-- =====================================================
-         ML POTENTIALS
-         ===================================================== -->
-
-    <article class="application-card">
-
-      <div class="application-background">
-
-        <svg
-          viewBox="0 0 600 400"
-          preserveAspectRatio="xMidYMid slice"
-        >
-
-          <defs>
-
-            <radialGradient id="ml-bg">
-
-              <stop
-                offset="0%"
-                stop-color="#55718e"
-              />
-
-              <stop
-                offset="100%"
-                stop-color="#111b25"
-              />
-
-            </radialGradient>
-
-          </defs>
-
-          <rect
-            width="600"
-            height="400"
-            fill="url(#ml-bg)"
-          />
-
-
-          <!-- neural-network / atomic connections -->
-
-          <g
-            stroke="#a9d7ff"
-            stroke-width="2"
-            opacity="0.55"
-          >
-
-            <line x1="90" y1="90" x2="220" y2="140"/>
-            <line x1="90" y1="90" x2="220" y2="260"/>
-
-            <line x1="90" y1="200" x2="220" y2="140"/>
-            <line x1="90" y1="200" x2="220" y2="260"/>
-
-            <line x1="220" y1="140" x2="370" y2="100"/>
-            <line x1="220" y1="140" x2="370" y2="210"/>
-            <line x1="220" y1="260" x2="370" y2="210"/>
-            <line x1="220" y1="260" x2="370" y2="300"/>
-
-            <line x1="370" y1="100" x2="510" y2="190"/>
-            <line x1="370" y1="210" x2="510" y2="190"/>
-            <line x1="370" y1="300" x2="510" y2="190"/>
-
-          </g>
-
-
-          <g fill="#d6eeff">
-
-            <circle cx="90" cy="90" r="12"/>
-            <circle cx="90" cy="200" r="15"/>
-
-            <circle cx="220" cy="140" r="18"/>
-            <circle cx="220" cy="260" r="14"/>
-
-            <circle cx="370" cy="100" r="13"/>
-            <circle cx="370" cy="210" r="20"/>
-            <circle cx="370" cy="300" r="11"/>
-
-            <circle cx="510" cy="190" r="22"/>
-
-          </g>
-
-
-          <!-- atomistic foreground -->
-
-          <g
-            fill="#ffffff"
-            opacity="0.85"
-          >
-
-            <circle cx="470" cy="60" r="9"/>
-            <circle cx="530" cy="90" r="13"/>
-            <circle cx="560" cy="45" r="7"/>
-
-          </g>
-
-        </svg>
-
-      </div>
-
-
-      <div class="application-content">
-
-        <span class="application-label">
-          AI + Atomistics
-        </span>
-
-        <h3>
-          Machine-Learning Interatomic Potentials
-        </h3>
-
-        <p>
-
-          Development of machine-learning
-          potentials trained on first-principles
-          data for large-scale molecular
-          dynamics simulations with
-          near-DFT accuracy.
-
-        </p>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- =====================================================
-         HYDROGEN DIFFUSION
-         ===================================================== -->
-
-    <article class="application-card">
-
-      <div class="application-background">
-
-        <svg
-          viewBox="0 0 600 400"
-          preserveAspectRatio="xMidYMid slice"
-        >
-
-          <defs>
-
-            <linearGradient
-              id="hydrogen-bg"
-              x1="0"
-              y1="0"
-              x2="1"
-              y2="1"
-            >
-
-              <stop
-                offset="0%"
-                stop-color="#243242"
-              />
-
-              <stop
-                offset="100%"
-                stop-color="#73879c"
-              />
-
-            </linearGradient>
-
-          </defs>
-
-
-          <rect
-            width="600"
-            height="400"
-            fill="url(#hydrogen-bg)"
-          />
-
-
-          <!-- crystal lattice -->
-
-          <g
-            stroke="#c8d3dd"
-            stroke-width="2"
-            opacity="0.55"
-          >
-
-            <line x1="80" y1="90" x2="200" y2="90"/>
-            <line x1="200" y1="90" x2="320" y2="90"/>
-            <line x1="320" y1="90" x2="440" y2="90"/>
-
-            <line x1="80" y1="210" x2="200" y2="210"/>
-            <line x1="200" y1="210" x2="320" y2="210"/>
-            <line x1="320" y1="210" x2="440" y2="210"/>
-
-            <line x1="80" y1="90" x2="80" y2="210"/>
-            <line x1="200" y1="90" x2="200" y2="210"/>
-            <line x1="320" y1="90" x2="320" y2="210"/>
-            <line x1="440" y1="90" x2="440" y2="210"/>
-
-            <line x1="80" y1="90" x2="200" y2="210"/>
-            <line x1="200" y1="90" x2="320" y2="210"/>
-            <line x1="320" y1="90" x2="440" y2="210"/>
-
-          </g>
-
-
-          <g fill="#c5ccd4">
-
-            <circle cx="80" cy="90" r="18"/>
-            <circle cx="200" cy="90" r="18"/>
-            <circle cx="320" cy="90" r="18"/>
-            <circle cx="440" cy="90" r="18"/>
-
-            <circle cx="80" cy="210" r="18"/>
-            <circle cx="200" cy="210" r="18"/>
-            <circle cx="320" cy="210" r="18"/>
-            <circle cx="440" cy="210" r="18"/>
-
-          </g>
-
-
-          <!-- hydrogen path -->
-
-          <path
-            d="
-            M120 150
-            C190 115,
-             265 185,
-             350 145
-            S470 120,
-             530 155
-            "
-            fill="none"
-            stroke="#ffae42"
-            stroke-width="5"
-            stroke-dasharray="10 8"
-          />
-
-
-          <circle
-            cx="350"
-            cy="145"
-            r="11"
-            fill="#ffffff"
-          />
-
-        </svg>
-
-      </div>
-
-
-      <div class="application-content">
-
-        <span class="application-label">
-          DFT + NEB
-        </span>
-
-        <h3>
-          Hydrogen Diffusion in Metals
-        </h3>
-
-        <p>
-
-          First-principles and atomistic
-          simulations of hydrogen migration,
-          trapping, diffusion barriers,
-          local bonding, and electronic
-          interactions in metallic materials.
-
-        </p>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- =====================================================
-         BATTERY ELECTROLYTES
-         ===================================================== -->
-
-    <article class="application-card">
-
-      <div class="application-background">
-
-        <svg
-          viewBox="0 0 600 400"
-          preserveAspectRatio="xMidYMid slice"
-        >
-
-          <defs>
-
-            <radialGradient id="battery-bg">
-
-              <stop
-                offset="0%"
-                stop-color="#496a68"
-              />
-
-              <stop
-                offset="100%"
-                stop-color="#152322"
-              />
-
-            </radialGradient>
-
-          </defs>
-
-
-          <rect
-            width="600"
-            height="400"
-            fill="url(#battery-bg)"
-          />
-
-
-          <!-- solvent molecules -->
-
-          <g
-            stroke="#cce5df"
-            stroke-width="4"
-            opacity="0.65"
-          >
-
-            <line x1="110" y1="100" x2="170" y2="135"/>
-            <line x1="170" y1="135" x2="225" y2="100"/>
-
-            <line x1="360" y1="95" x2="410" y2="145"/>
-            <line x1="410" y1="145" x2="470" y2="120"/>
-
-            <line x1="160" y1="260" x2="225" y2="220"/>
-            <line x1="225" y1="220" x2="285" y2="270"/>
-
-          </g>
-
-
-          <g fill="#dceee9">
-
-            <circle cx="110" cy="100" r="14"/>
-            <circle cx="170" cy="135" r="20"/>
-            <circle cx="225" cy="100" r="13"/>
-
-            <circle cx="360" cy="95" r="14"/>
-            <circle cx="410" cy="145" r="20"/>
-            <circle cx="470" cy="120" r="13"/>
-
-            <circle cx="160" cy="260" r="13"/>
-            <circle cx="225" cy="220" r="20"/>
-            <circle cx="285" cy="270" r="14"/>
-
-          </g>
-
-
-          <!-- Li ions -->
-
-          <g fill="#ffdb72">
-
-            <circle cx="300" cy="150" r="18"/>
-            <circle cx="420" cy="250" r="16"/>
-            <circle cx="90" cy="230" r="14"/>
-
-          </g>
-
-
-          <g
-            fill="#151515"
-            font-family="Arial"
-            font-weight="bold"
-            text-anchor="middle"
-          >
-
-            <text x="300" y="156" font-size="14">
-              Li+
-            </text>
-
-            <text x="420" y="255" font-size="12">
-              Li+
-            </text>
-
-          </g>
-
-        </svg>
-
-      </div>
-
-
-      <div class="application-content">
-
-        <span class="application-label">
-          Energy Storage
-        </span>
-
-        <h3>
-          Battery Electrolytes
-        </h3>
-
-        <p>
-
-          Molecular simulation and
-          force-field development for
-          lithium-ion electrolytes,
-          including ion solvation,
-          diffusion, conductivity,
-          and concentrated electrolyte
-          environments.
-
-        </p>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- =====================================================
-         METALS AND ALLOYS
-         ===================================================== -->
-
-    <article class="application-card">
-
-      <div class="application-background">
-
-        <svg
-          viewBox="0 0 600 400"
-          preserveAspectRatio="xMidYMid slice"
-        >
-
-          <defs>
-
-            <linearGradient
-              id="alloy-bg"
-              x1="0"
-              y1="0"
-              x2="1"
-              y2="1"
-            >
-
-              <stop
-                offset="0%"
-                stop-color="#4b4f55"
-              />
-
-              <stop
-                offset="100%"
-                stop-color="#11151a"
-              />
-
-            </linearGradient>
-
-          </defs>
-
-
-          <rect
-            width="600"
-            height="400"
-            fill="url(#alloy-bg)"
-          />
-
-
-          <g
-            stroke="#969ba1"
-            stroke-width="2"
-            opacity="0.45"
-          >
-
-            <path d="M60 80 L150 125 L240 80 L330 125 L420 80 L510 125"/>
-            <path d="M60 180 L150 225 L240 180 L330 225 L420 180 L510 225"/>
-            <path d="M60 280 L150 325 L240 280 L330 325 L420 280 L510 325"/>
-
-            <line x1="60" y1="80" x2="60" y2="280"/>
-            <line x1="150" y1="125" x2="150" y2="325"/>
-            <line x1="240" y1="80" x2="240" y2="280"/>
-            <line x1="330" y1="125" x2="330" y2="325"/>
-            <line x1="420" y1="80" x2="420" y2="280"/>
-            <line x1="510" y1="125" x2="510" y2="325"/>
-
-          </g>
-
-
-          <g>
-
-            <circle cx="60" cy="80" r="20" fill="#c6cbd1"/>
-            <circle cx="150" cy="125" r="20" fill="#9baebc"/>
-            <circle cx="240" cy="80" r="20" fill="#d7c49b"/>
-            <circle cx="330" cy="125" r="20" fill="#abb0b5"/>
-            <circle cx="420" cy="80" r="20" fill="#9bb4aa"/>
-            <circle cx="510" cy="125" r="20" fill="#d2b6a2"/>
-
-            <circle cx="60" cy="180" r="20" fill="#9bb4aa"/>
-            <circle cx="150" cy="225" r="20" fill="#c6cbd1"/>
-            <circle cx="240" cy="180" r="20" fill="#d2b6a2"/>
-            <circle cx="330" cy="225" r="20" fill="#d7c49b"/>
-            <circle cx="420" cy="180" r="20" fill="#abb0b5"/>
-            <circle cx="510" cy="225" r="20" fill="#9baebc"/>
-
-          </g>
-
-        </svg>
-
-      </div>
-
-
-      <div class="application-content">
-
-        <span class="application-label">
-          Materials
-        </span>
-
-        <h3>
-          Metals & Alloys
-        </h3>
-
-        <p>
-
-          Atomistic and electronic-structure
-          modeling of metals,
-          high-entropy alloys,
-          defects, interfaces,
-          structural stability,
-          transport, and
-          mechanical behavior.
-
-        </p>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- =====================================================
-         INTERFACES
-         ===================================================== -->
-
-    <article class="application-card">
-
-      <div class="application-background">
-
-        <svg
-          viewBox="0 0 600 400"
-          preserveAspectRatio="xMidYMid slice"
-        >
-
-          <defs>
-
-            <linearGradient
-              id="interface-bg"
-              x1="0"
-              y1="0"
-              x2="0"
-              y2="1"
-            >
-
-              <stop
-                offset="0%"
-                stop-color="#385164"
-              />
-
-              <stop
-                offset="55%"
-                stop-color="#21303d"
-              />
-
-              <stop
-                offset="56%"
-                stop-color="#6a6660"
-              />
-
-              <stop
-                offset="100%"
-                stop-color="#252525"
-              />
-
-            </linearGradient>
-
-          </defs>
-
-
-          <rect
-            width="600"
-            height="400"
-            fill="url(#interface-bg)"
-          />
-
-
-          <!-- fluid molecules -->
-
-          <g
-            fill="#bde5ff"
-            opacity="0.8"
-          >
-
-            <circle cx="80" cy="80" r="11"/>
-            <circle cx="145" cy="120" r="15"/>
-            <circle cx="220" cy="75" r="10"/>
-            <circle cx="300" cy="130" r="17"/>
-            <circle cx="390" cy="85" r="12"/>
-            <circle cx="470" cy="125" r="15"/>
-            <circle cx="535" cy="70" r="9"/>
-
-          </g>
-
-
-          <!-- metallic surface -->
-
-          <g fill="#b6b6b6">
-
-            <circle cx="50" cy="255" r="22"/>
-            <circle cx="110" cy="255" r="22"/>
-            <circle cx="170" cy="255" r="22"/>
-            <circle cx="230" cy="255" r="22"/>
-            <circle cx="290" cy="255" r="22"/>
-            <circle cx="350" cy="255" r="22"/>
-            <circle cx="410" cy="255" r="22"/>
-            <circle cx="470" cy="255" r="22"/>
-            <circle cx="530" cy="255" r="22"/>
-
-            <circle cx="80" cy="310" r="22"/>
-            <circle cx="140" cy="310" r="22"/>
-            <circle cx="200" cy="310" r="22"/>
-            <circle cx="260" cy="310" r="22"/>
-            <circle cx="320" cy="310" r="22"/>
-            <circle cx="380" cy="310" r="22"/>
-            <circle cx="440" cy="310" r="22"/>
-            <circle cx="500" cy="310" r="22"/>
-
-          </g>
-
-        </svg>
-
-      </div>
-
-
-      <div class="application-content">
-
-        <span class="application-label">
-          Interfaces
-        </span>
-
-        <h3>
-          Interfaces & Molecular Systems
-        </h3>
-
-        <p>
-
-          Molecular-level investigation
-          of liquids, polymers,
-          ionic liquids, surfaces,
-          solid-liquid interfaces,
-          and complex molecular environments.
-
-        </p>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- =====================================================
-         HPC
-         ===================================================== -->
-
-    <article class="application-card">
-
-      <div class="application-background">
-
-        <svg
-          viewBox="0 0 600 400"
-          preserveAspectRatio="xMidYMid slice"
-        >
-
-          <defs>
-
-            <linearGradient
-              id="hpc-bg"
-              x1="0"
-              y1="0"
-              x2="1"
-              y2="1"
-            >
-
-              <stop
-                offset="0%"
-                stop-color="#17212d"
-              />
-
-              <stop
-                offset="100%"
-                stop-color="#020509"
-              />
-
-            </linearGradient>
-
-          </defs>
-
-
-          <rect
-            width="600"
-            height="400"
-            fill="url(#hpc-bg)"
-          />
-
-
-          <!-- server racks -->
-
-          <g>
-
-            <rect
-              x="65"
-              y="50"
-              width="115"
-              height="300"
-              rx="4"
-              fill="#242d36"
-              stroke="#687788"
-            />
-
-            <rect
-              x="245"
-              y="50"
-              width="115"
-              height="300"
-              rx="4"
-              fill="#242d36"
-              stroke="#687788"
-            />
-
-            <rect
-              x="425"
-              y="50"
-              width="115"
-              height="300"
-              rx="4"
-              fill="#242d36"
-              stroke="#687788"
-            />
-
-          </g>
-
-
-          <g
-            fill="#778696"
-          >
-
-            <!-- rack one -->
-
-            <rect x="82" y="75" width="80" height="12"/>
-            <rect x="82" y="110" width="80" height="12"/>
-            <rect x="82" y="145" width="80" height="12"/>
-            <rect x="82" y="180" width="80" height="12"/>
-            <rect x="82" y="215" width="80" height="12"/>
-            <rect x="82" y="250" width="80" height="12"/>
-            <rect x="82" y="285" width="80" height="12"/>
-
-            <!-- rack two -->
-
-            <rect x="262" y="75" width="80" height="12"/>
-            <rect x="262" y="110" width="80" height="12"/>
-            <rect x="262" y="145" width="80" height="12"/>
-            <rect x="262" y="180" width="80" height="12"/>
-            <rect x="262" y="215" width="80" height="12"/>
-            <rect x="262" y="250" width="80" height="12"/>
-            <rect x="262" y="285" width="80" height="12"/>
-
-            <!-- rack three -->
-
-            <rect x="442" y="75" width="80" height="12"/>
-            <rect x="442" y="110" width="80" height="12"/>
-            <rect x="442" y="145" width="80" height="12"/>
-            <rect x="442" y="180" width="80" height="12"/>
-            <rect x="442" y="215" width="80" height="12"/>
-            <rect x="442" y="250" width="80" height="12"/>
-            <rect x="442" y="285" width="80" height="12"/>
-
-          </g>
-
-
-          <!-- status LEDs -->
-
-          <g fill="#61d789">
-
-            <circle cx="95" cy="81" r="3"/>
-            <circle cx="275" cy="116" r="3"/>
-            <circle cx="455" cy="151" r="3"/>
-            <circle cx="95" cy="221" r="3"/>
-            <circle cx="275" cy="256" r="3"/>
-            <circle cx="455" cy="291" r="3"/>
-
-          </g>
-
-        </svg>
-
-      </div>
-
-
-      <div class="application-content">
-
-        <span class="application-label">
-          HPC
-        </span>
-
-        <h3>
-          HPC Scientific Environments
-        </h3>
-
-        <p>
-
-          Reproducible and optimized
-          computational environments
-          for scientific applications
-          using MPI, GPUs, containers,
-          high-speed interconnects,
-          and modern HPC schedulers.
-
-        </p>
-
-      </div>
-
-    </article>
-
+  <div class="applications-inner">
+
+    <h2 class="section-title">
+      Research & Engineering Applications
+    </h2>
+
+    <p class="section-intro">
+      We investigate fundamental material behavior and support the design of advanced
+      technologies through integrated experimental and computational environments.
+      Areas of focus include transport behavior, energetic properties, materials design,
+      and interfaces.
+    </p>
+
+    <div class="applications-figure">
+      <img
+        src="images/research-engineering-applications.png"
+        alt="Scientific research and engineering applications including transport properties, energetic properties, new materials design, interfaces, and integrated experimental and computational environments."
+      >
+    </div>
+
+    <p class="applications-caption">
+      Integrated scientific approaches connect experiments, modeling, simulation,
+      and data analysis to support materials understanding, prediction, and engineering design.
+    </p>
 
   </div>
 
 </section>
-
-
-
-<!-- =========================================================
-     COMPUTATIONAL TECHNOLOGIES
-     ========================================================= -->
 
 <section id="technologies">
 
@@ -2197,118 +594,41 @@
     </h2>
 
     <p class="section-intro">
-
-      Established scientific software,
-      programming languages,
-      artificial-intelligence frameworks,
-      and high-performance computing
-      technologies.
-
+      Modern scientific research requires computational environments that are efficient,
+      scalable, reproducible, and capable of addressing increasingly complex problems.
     </p>
 
+    <div class="grid">
 
-    <div class="technology-groups">
-
-
-      <div class="technology-group">
-
-        <h3>
-          Electronic Structure
-        </h3>
-
+      <div class="box">
+        <h3>High-Performance Computing</h3>
         <p>
-
-          VASP • CP2K • Gaussian •
-          DFT • AIMD • NEB
-
+          High-performance computing extends scientific simulation beyond the limitations
+          of conventional computing. Scalable environments enable larger systems,
+          more complex models, longer simulations, and broader exploration of scientific
+          parameter spaces.
         </p>
-
       </div>
 
-
-      <div class="technology-group">
-
-        <h3>
-          Molecular Simulation
-        </h3>
-
+      <div class="box">
+        <h3>Artificial Intelligence</h3>
         <p>
-
-          LAMMPS • GROMACS •
-          Amber • NAMD
-
+          Artificial intelligence and machine learning provide new approaches for
+          analyzing scientific data, developing predictive models, and accelerating
+          computational discovery. Combined with physical knowledge, these methods
+          support reliable scientific and engineering research.
         </p>
-
       </div>
 
-
-      <div class="technology-group">
-
-        <h3>
-          AI & Machine Learning
-        </h3>
-
+      <div class="box">
+        <h3>Scientific Software & Workflows</h3>
         <p>
-
-          DeePMD-kit •
-          Machine-Learning Interatomic Potentials •
-          Active Learning •
-          Scientific Machine Learning
-
+          Reliable computational research depends on reproducible and well-designed
+          scientific workflows. We develop computational environments that connect
+          simulation, data processing, analysis, and visualization into efficient
+          and maintainable research processes.
         </p>
-
       </div>
-
-
-      <div class="technology-group">
-
-        <h3>
-          High-Performance Computing
-        </h3>
-
-        <p>
-
-          Linux • Slurm • MPI •
-          OpenMP • CUDA •
-          Apptainer • Singularity
-
-        </p>
-
-      </div>
-
-
-      <div class="technology-group">
-
-        <h3>
-          Scientific Programming
-        </h3>
-
-        <p>
-
-          Python • C • C++ • Fortran
-
-        </p>
-
-      </div>
-
-
-      <div class="technology-group">
-
-        <h3>
-          Scientific Analysis
-        </h3>
-
-        <p>
-
-          Atomistic Data Analysis •
-          Statistical Modeling •
-          Visualization •
-          Automated Workflows
-
-        </p>
-
-      </div>
-
 
     </div>
 
@@ -2316,75 +636,39 @@
 
 </section>
 
-
-
-<!-- =========================================================
-     PHILOSOPHY
-     ========================================================= -->
-
 <section id="philosophy">
 
   <h2 class="section-title">
     Philosophy
   </h2>
 
-
   <div class="box philosophy-box">
 
     <p>
-
-      Scientific software must be
-      accurate, reproducible,
-      scalable, and grounded in
-      the underlying physics.
-
+      Scientific computing should be accurate, reproducible, scalable,
+      and grounded in physical understanding.
     </p>
 
     <br>
 
-
     <p>
-
-      Northern Solutions combines
-      scientific understanding with
-      modern computational methods
-      to build reliable simulation
-      workflows and research software.
-
-      Our approach emphasizes
-      numerical accuracy,
-      reproducibility,
-      efficient use of
-      high-performance computing resources,
-      transparent methodology,
-      and maintainable software.
-
+      Northern Solutions combines scientific knowledge with modern computational
+      methods to build reliable models, workflows, and research software.
+      Our approach emphasizes numerical accuracy, reproducibility, efficient use
+      of computational resources, and clear scientific interpretation.
     </p>
 
     <br>
 
-
     <p>
-
-      Our goal is to help researchers
-      and engineering organizations
-      move efficiently from scientific
-      questions to computational models,
-      large-scale simulations,
-      data analysis,
-      and actionable scientific insight.
-
+      Our goal is to help researchers and engineering organizations move efficiently
+      from scientific questions to computational models, simulations, data analysis,
+      and meaningful scientific insight.
     </p>
 
   </div>
 
 </section>
-
-
-
-<!-- =========================================================
-     CONTACT
-     ========================================================= -->
 
 <section id="contact">
 
@@ -2392,251 +676,89 @@
     Contact
   </h2>
 
-
   <p class="contact-text">
-
-    Interested in scientific computing,
-    molecular dynamics,
-    materials modeling,
-    high-performance computing,
-    machine learning,
-    or custom scientific software?
-
-    Contact Northern Solutions
-    to discuss your research
-    or engineering project.
-
+    Interested in scientific computing, materials modeling, high-performance computing,
+    artificial intelligence, or custom scientific software?
+    Contact Northern Solutions to discuss your research or engineering project.
   </p>
 
-
   <div class="cta">
-
-    <a
-      href="mailto:qmpotential@gmail.com"
-    >
+    <a href="mailto:qmpotential@gmail.com">
       qmpotential@gmail.com
     </a>
-
   </div>
 
 </section>
 
-
-
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
-
 <footer>
-
-  © 2016–2026
-  Northern Solutions L.L.C.
+  © 2016–2026 Northern Solutions L.L.C.
   · Scientific Computing
-  · Molecular Dynamics
+  · Materials Modeling
   · HPC
   · AI
-
 </footer>
 
-
-
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
-
 <script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 
-  /* =======================================================
-     MOBILE NAVIGATION
-     ======================================================= */
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
 
-  const toggle =
-    document.getElementById(
-      "menu-toggle"
-    );
+  const sections = document.querySelectorAll("section, header");
+  const navItems = document.querySelectorAll(".nav-links a");
 
-  const navLinks =
-    document.querySelector(
-      ".nav-links"
-    );
+  window.addEventListener("scroll", () => {
+    let current = "";
 
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 160;
 
-  toggle.addEventListener(
-    "click",
-    () => {
-
-      navLinks.classList.toggle(
-        "active"
-      );
-
-    }
-  );
-
-
-  document
-    .querySelectorAll(
-      ".nav-links a"
-    )
-    .forEach(
-      link => {
-
-        link.addEventListener(
-          "click",
-          () => {
-
-            navLinks.classList.remove(
-              "active"
-            );
-
-          }
-        );
-
+      if (window.pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
       }
-    );
+    });
 
+    navItems.forEach(link => {
+      link.classList.remove("active");
 
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
 
-  /* =======================================================
-     ACTIVE NAVIGATION
-     ======================================================= */
-
-  const sections =
-    document.querySelectorAll(
-      "section, header"
-    );
-
-  const navItems =
-    document.querySelectorAll(
-      ".nav-links a"
-    );
-
-
-  window.addEventListener(
-    "scroll",
-    () => {
-
-      let current = "";
-
-      sections.forEach(
-        section => {
-
-          const sectionTop =
-            section.offsetTop - 160;
-
-          if (
-            window.pageYOffset >=
-            sectionTop
-          ) {
-
-            current =
-              section.getAttribute(
-                "id"
-              );
-
-          }
-
-        }
-      );
-
-
-      navItems.forEach(
-        link => {
-
-          link.classList.remove(
-            "active"
-          );
-
-          if (
-            link.getAttribute(
-              "href"
-            ) ===
-            "#" + current
-          ) {
-
-            link.classList.add(
-              "active"
-            );
-
-          }
-
-        }
-      );
-
-    }
-  );
-
-
-
-  /* =======================================================
-     ATOMISTIC / MOLECULAR-DYNAMICS HERO ANIMATION
-     ======================================================= */
-
-  const canvas =
-    document.getElementById(
-      "particles-canvas"
-    );
-
-  const ctx =
-    canvas.getContext(
-      "2d"
-    );
-
+  const canvas = document.getElementById("particles-canvas");
+  const ctx = canvas.getContext("2d");
 
   let particles = [];
 
-
   function resizeCanvas() {
-
-    canvas.width =
-      window.innerWidth;
-
-    canvas.height =
-      window.innerHeight;
-
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
 
-
-  window.addEventListener(
-    "resize",
-    resizeCanvas
-  );
-
-
+  window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
 
-
-
   class Particle {
-
     constructor() {
-
-      this.x =
-        Math.random() *
-        canvas.width;
-
-      this.y =
-        Math.random() *
-        canvas.height;
-
-      this.radius =
-        Math.random() * 4 + 2;
-
-      this.dx =
-        (Math.random() - 0.5)
-        * 0.55;
-
-      this.dy =
-        (Math.random() - 0.5)
-        * 0.55;
-
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.radius = Math.random() * 4 + 2;
+      this.dx = (Math.random() - 0.5) * 0.55;
+      this.dy = (Math.random() - 0.5) * 0.55;
     }
 
-
     draw() {
-
       ctx.beginPath();
-
       ctx.arc(
         this.x,
         this.y,
@@ -2644,152 +766,65 @@
         0,
         Math.PI * 2
       );
-
-      ctx.fillStyle =
-        "rgba(80,80,80,0.58)";
-
+      ctx.fillStyle = "rgba(80,80,80,0.58)";
       ctx.fill();
-
     }
-
 
     update() {
-
       this.x += this.dx;
-
       this.y += this.dy;
 
-
-      if (
-        this.x < 0 ||
-        this.x > canvas.width
-      ) {
-
+      if (this.x < 0 || this.x > canvas.width) {
         this.dx *= -1;
-
       }
 
-
-      if (
-        this.y < 0 ||
-        this.y > canvas.height
-      ) {
-
+      if (this.y < 0 || this.y > canvas.height) {
         this.dy *= -1;
-
       }
-
 
       this.draw();
-
     }
-
   }
 
-
-
-  function initParticles(
-    num = 70
-  ) {
-
+  function initParticles(num = 70) {
     particles = [];
 
-    for (
-      let i = 0;
-      i < num;
-      i++
-    ) {
-
-      particles.push(
-        new Particle()
-      );
-
+    for (let i = 0; i < num; i++) {
+      particles.push(new Particle());
     }
-
   }
-
 
   initParticles();
 
-
-
   function drawConnections() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
 
-    for (
-      let i = 0;
-      i < particles.length;
-      i++
-    ) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
 
-      for (
-        let j = i + 1;
-        j < particles.length;
-        j++
-      ) {
-
-        const dx =
-          particles[i].x -
-          particles[j].x;
-
-        const dy =
-          particles[i].y -
-          particles[j].y;
-
-        const distance =
-          Math.sqrt(
-            dx * dx +
-            dy * dy
-          );
-
-
-        if (
-          distance < 130
-        ) {
-
-          const opacity =
-            1 -
-            distance / 130;
-
+        if (distance < 130) {
+          const opacity = 1 - distance / 130;
 
           ctx.beginPath();
-
-          ctx.moveTo(
-            particles[i].x,
-            particles[i].y
-          );
-
-          ctx.lineTo(
-            particles[j].x,
-            particles[j].y
-          );
-
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
 
           ctx.strokeStyle =
             "rgba(100,100,100," +
             opacity * 0.18 +
             ")";
 
-
           ctx.lineWidth = 1;
-
           ctx.stroke();
-
         }
-
       }
-
     }
-
   }
 
-
-
   function animate() {
-
-    requestAnimationFrame(
-      animate
-    );
-
+    requestAnimationFrame(animate);
 
     ctx.clearRect(
       0,
@@ -2798,23 +833,15 @@
       canvas.height
     );
 
-
     drawConnections();
 
-
     particles.forEach(
-      particle =>
-        particle.update()
+      particle => particle.update()
     );
-
   }
 
-
   animate();
-
-
 </script>
-
 
 </body>
 </html>
