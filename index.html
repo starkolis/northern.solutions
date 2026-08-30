@@ -258,7 +258,7 @@
     }
 
     .capability-card {
-      border-top: 3px solid #222;
+      border-top: none;
     }
 
     
@@ -301,10 +301,31 @@
     }
 
     footer {
-      padding: 3rem 1rem;
+      position: relative;
+      min-height: 340px;
+      padding: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
       text-align: center;
       font-size: 0.85rem;
-      color: #777;
+      color: #ffffff;
+      background-image:
+        linear-gradient(to bottom, rgba(2, 19, 38, 0.05), rgba(2, 19, 38, 0.75)),
+        url("footer-science.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .footer-text {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 1.4rem 1rem;
+      background: rgba(0, 12, 28, 0.34);
+      backdrop-filter: blur(3px);
     }
 
     @media (max-width: 900px) {
@@ -336,6 +357,29 @@
         padding: 4.5rem 1.2rem;
       }
     }
+  
+    /* Scientific Capabilities: flat, shadow-free cards */
+    #capabilities .box {
+      box-shadow: none;
+    }
+
+    #capabilities .box:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+  
+    /* Scientific Capabilities: no top line, no shadow, no hover lift */
+    #capabilities .capability-card {
+      border-top: none !important;
+      box-shadow: none !important;
+    }
+
+    #capabilities .capability-card:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
   </style>
 </head>
 
@@ -581,11 +625,13 @@
 </section>
 
 <footer>
-  © 2016–2026 Northern Solutions L.L.C.
-  · Scientific Computing
-  · Materials Modeling
-  · HPC
-  · AI
+  <div class="footer-text">
+    © 2016–2026 Northern Solutions L.L.C.
+    · Scientific Computing
+    · Materials Modeling
+    · HPC
+    · AI
+  </div>
 </footer>
 
 <script>
@@ -733,5 +779,7 @@
   animate();
 </script>
 
+</body>
+</html>
 </body>
 </html>
